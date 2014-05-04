@@ -1,0 +1,61 @@
+\documentclass{abntex2-unisul}
+
+\usepackage{lipsum} % para geração de dummy text
+
+\titulo{<O Título do Seu Trabalho Aqui>}
+\autor{<Nome Aluno 1>\\ <Nome Aluno 2>}
+\local{<Cidade>}
+\data{<Ano de Publicação>}
+
+\orientador[Orientador:]{<Nome do(a) Orientador(a)>}
+\coorientador[Coorientador:]{<Nome do(a) Coorientador(a)>}
+
+\instituicao{Universidade do Sul de Santa Catarina}
+\tipotrabalho{Trabalho de Conclusão de Curso}
+
+\naturezatrabalho{Este Trabalho de Conclusão de Curso foi julgado adequado à obtenção do título de... <Bacharel, Licenciado, Mestre, Especialização ou Tecnólogo> em... <área de concentração> e aprovado em sua forma final pelo Curso de... <nome do curso>, da \imprimirinstituicao.}
+\preambulo{Trabalho de Conclusão de Curso apresentado ao Curso de <graduação, pós-graduação ou tecnólogo> em... <nome do curso>, da \imprimirinstituicao, como requisito parcial para obtenção do título de.. <Bacharel, Licenciado, Mestre, Especialização ou Tecnólogo>.}
+
+\membrobancaA[\imprimirinstituicao]{Prof. e orientador \imprimirorientador}
+\membrobancaB[Universidade B]{Membro B}
+\membrobancaC[Universidade C]{Membro C}
+
+\begin{document}
+
+    % Elementos pré-textuais
+    \pretextual
+    \imprimircapa
+    \imprimirfolhaderosto{}
+    \include{errata}
+    \imprimirfolhadeaprovacao
+    \include{dedicatoria}
+    \include{agradecimentos}
+    \include{epigrafe}
+    \include{resumo}
+    \include{abstract}
+    \listoffigures*
+    \cleardoublepage
+    \listoftables*
+    \cleardoublepage
+    \include{abreviaturas}
+    \include{siglas}
+    \include{simbolos}
+    \tableofcontents*
+    \cleardoublepage
+
+    % Elementos textuais
+    \textual
+    \include{cap1}
+    \include{cap2}
+    \include{cap3}
+    \include{cap4}
+    \include{cap5}
+
+    % Elementos pós-textuais
+    \postextual
+    \include{glossario}
+    \include{apendices}
+    \include{anexos}
+    \bibliography{tcc}
+
+\end{document}
