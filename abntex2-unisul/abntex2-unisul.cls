@@ -29,7 +29,7 @@
     section=TITLE,
     12pt, % Tamanho da fonte
     openright, % Capítulos começam em pág. ímpar (insere página vazia caso preciso)
-    twoside, % Para impressão em verso e anverso. Oposto a oneside
+    oneside, % Para impressão somente verso. Oposto a impressão em verso e anverso
     a4paper, % Tamanho do papel
     english, % Idioma adicional para hifenização
     french, % Idioma adicional para hifenização
@@ -59,10 +59,20 @@
 \RequirePackage{indentfirst} % Indenta o primeiro parágrafo de cada seção.
 \RequirePackage{color} % Controle das cores
 \RequirePackage{microtype} % Para melhorias de justificação
-\RequirePackage[small]{caption} % Tamanho das legendas
+\RequirePackage[small,singlelinecheck=false,justification=justified]{caption} % Tamanho e alinhamento das legendas
 \RequirePackage{lscape} % Permite a criação de conteúdo em modo paisagem
 \RequirePackage{hyperref} % Criação de links
 \RequirePackage{etoolbox}
+
+% Cabecalho padrao
+\makepagestyle{abntheadings}
+\makeevenhead{abntheadings}{\ABNTEXfontereduzida\thepage}{}{\ABNTEXfontereduzida\textit\leftmark}
+\makeoddhead{abntheadings}{}{}{\ABNTEXfontereduzida\thepage}
+\makeheadrule{abntheadings}{0pt}{\normalrulethickness}
+
+% Cabecalho do inicio do capitulo
+\makepagestyle{abntchapfirst}
+\makeoddhead{abntchapfirst}{}{}{\ABNTEXfontereduzida\thepage}
 
 %% Tabelas
 \RequirePackage{multirow}
@@ -244,7 +254,7 @@
 \renewcommand{\ABNTEXsubsubsubsectionfont}{\normalfont\itshape\selectfont}
 \renewcommand{\ABNTEXsubsubsubsectionfontsize}{\normalsize}
 
-%% Redefinição da formatação de Paragrafos 
+%% Redefinição da formatação de Parágrafos 
 \setlength{\parindent}{2cm}
 \setlength{\parskip}{0cm}
 
