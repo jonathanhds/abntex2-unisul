@@ -85,6 +85,7 @@
 \graphicspath{{./img//}} % Diretório das imagens
 
 %% Citações
+\RequirePackage[hyphenbreaks]{breakurl}
 \RequirePackage[alf,abnt-emphasize=bf]{abntex2cite}
 
 % Estilos
