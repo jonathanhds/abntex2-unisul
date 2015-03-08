@@ -241,6 +241,11 @@
 
 }
 
+%% Comando para inserir sigla
+\newcommand{\sigla}[2][]{
+    \item[#1] \textit{#2}
+}
+
 %% Redefinição da formatação do \chapter
 \renewcommand{\ABNTEXchapterfont}{\normalfont\fontseries{b}\selectfont}
 \renewcommand{\ABNTEXchapterfontsize}{\normalsize}
