@@ -147,12 +147,14 @@
         \textbf{\MakeUppercase\imprimirtitulo}
 
         \vspace*{\fill}
-
+        
         \abntex@ifnotempty{\imprimirpreambulo}{
             \hspace{.45\textwidth}
             \begin{minipage}{.5\textwidth}
-                \SingleSpacing
-                \imprimirpreambulo
+                \begin{footnotesize}
+                    \SingleSpacing
+                    \imprimirpreambulo
+                \end{footnotesize}
             \end{minipage}
         }
 
@@ -189,7 +191,9 @@
 
             \hspace{.45\textwidth}
             \begin{minipage}{.5\textwidth}
-                \imprimirnaturezatrabalho
+                \begin{footnotesize}
+                    \imprimirnaturezatrabalho
+                \end{footnotesize}
             \end{minipage}
 
             \vspace*{\fill}
