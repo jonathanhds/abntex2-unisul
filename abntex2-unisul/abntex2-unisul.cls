@@ -59,7 +59,6 @@
 \RequirePackage{indentfirst} % Indenta o primeiro parágrafo de cada seção.
 \RequirePackage{color} % Controle das cores
 \RequirePackage{microtype} % Para melhorias de justificação
-\RequirePackage[small,singlelinecheck=false,justification=justified]{caption} % Tamanho e alinhamento das legendas
 \RequirePackage{lscape} % Permite a criação de conteúdo em modo paisagem
 \RequirePackage{hyperref} % Criação de links
 \RequirePackage{etoolbox}
@@ -83,6 +82,9 @@
 %% Imagens
 \RequirePackage{graphicx} % Inclusão de gráficos
 \graphicspath{{./img//}} % Diretório das imagens
+
+%% Tamanho e alinhamento das legendas
+\RequirePackage[singlelinecheck=false,justification=justified,font=footnotesize]{caption}
 
 %% Citações
 \RequirePackage[hyphenbreaks]{breakurl}
@@ -292,7 +294,6 @@
 }
 
 % Legendas
-\captionsetup{font=normalsize}
 \makeatletter
 \patchcmd{\caption@@@make}
   {\ifcaption@star}
