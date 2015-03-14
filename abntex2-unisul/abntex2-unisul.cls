@@ -41,14 +41,11 @@
 \LoadClass{abntex2}
 
 % Pacotes
-%% Correção ortográfica
-\RequirePackage[brazil,brazilian]{babel}
-
 %% Sumário
 \RequirePackage{tocloft}
 
 %% Codificação
-\RequirePackage[utf8]{inputenc} % Codificacao de entrada
+\RequirePackage[utf8]{inputenc} % Codificação de entrada
 \RequirePackage[T1]{fontenc} % Codificação de saída
 
 %% Fonte
@@ -63,13 +60,13 @@
 \RequirePackage{hyperref} % Criação de links
 \RequirePackage{etoolbox}
 
-% Cabecalho padrao
+%% Cabeçalho padrao
 \makepagestyle{abntheadings}
 \makeevenhead{abntheadings}{\ABNTEXfontereduzida\thepage}{}{\ABNTEXfontereduzida\textit\leftmark}
 \makeoddhead{abntheadings}{}{}{\ABNTEXfontereduzida\thepage}
 \makeheadrule{abntheadings}{0pt}{\normalrulethickness}
 
-% Cabecalho do inicio do capitulo
+%% Cabeçalho do inicio do capitulo
 \makepagestyle{abntchapfirst}
 \makeoddhead{abntchapfirst}{}{}{\ABNTEXfontereduzida\thepage}
 
@@ -151,10 +148,9 @@
         \abntex@ifnotempty{\imprimirpreambulo}{
             \hspace{.45\textwidth}
             \begin{minipage}{.5\textwidth}
-                \begin{footnotesize}
-                    \SingleSpacing
-                    \imprimirpreambulo
-                \end{footnotesize}
+                \begin{scriptsize}
+					\imprimirpreambulo
+				\end{scriptsize}
             \end{minipage}
         }
 
@@ -162,7 +158,6 @@
 
         \abntex@ifnotempty{\imprimirorientador}{
             \begin{center}
-                \SingleSpacing
                 \imprimirorientadorRotulo~\imprimirorientador\par
                 \abntex@ifnotempty{\imprimircoorientador}{
                     {\imprimircoorientadorRotulo~\imprimircoorientador}
@@ -191,9 +186,9 @@
 
             \hspace{.45\textwidth}
             \begin{minipage}{.5\textwidth}
-                \begin{footnotesize}
-                    \imprimirnaturezatrabalho
-                \end{footnotesize}
+            	\begin{scriptsize}
+					\imprimirnaturezatrabalho
+				\end{scriptsize}	
             \end{minipage}
 
             \vspace*{\fill}
