@@ -1,6 +1,13 @@
-\documentclass{abntex2-unisul}
+\documentclass[oneside]{abntex2-unisul}
 
 \usepackage{lipsum} % para geração de dummy text
+\usepackage{tikz} % graficos
+\usepackage{pgfplots} % graficos
+
+% glossarios extras
+\newglossary[abb.alg]{abbrev}{abb.acr}{abb.acn}{Abreviaturas}
+% prepara os glossarios
+\makeglossaries
 
 \titulo{<O Título do Seu Trabalho Aqui>}
 \autor{<Nome Aluno 1>\\ <Nome Aluno 2>}
@@ -20,9 +27,16 @@
 \membrobancaB[Universidade B]{Membro B}
 \membrobancaC[Universidade C]{Membro C}
 
+% cadastro glossarios e acronimos
+\include{glossario}
+\include{siglas}
+\include{simbolos}
+\include{abreviaturas}
+
 \begin{document}
 
     % Elementos pré-textuais
+    \pdfbookmark[0]{Capa}{capa}
     \pretextual
     \imprimircapa
     \imprimirfolhaderosto{}
@@ -33,13 +47,22 @@
     \include{epigrafe}
     \include{resumo}
     \include{abstract}
+    \pdfbookmark[0]{\listfigurename}{listoffigures}
     \listoffigures*
-    \cleardoublepage
+    \clearpage
+    \pdfbookmark[0]{\listtablename}{listoftables}
     \listoftables*
-    \cleardoublepage
-    \include{abreviaturas}
-    \include{siglas}
-    \include{simbolos}
+    \clearpage
+    \pdfbookmark[0]{Abreviaturas}{abreviaturas}
+    \printacronyms[type=abbrev] % abreviaturas
+    \clearpage
+    \pdfbookmark[0]{\acronymname}{printacronyms}
+    \printacronyms % siglas
+    \clearpage
+    \pdfbookmark[0]{\glssymbolsgroupname}{printsymbols}
+    \printsymbols[style=symbol] % simbolos
+    \clearpage
+    \pdfbookmark[0]{\contentsname}{tableofcontents}
     \tableofcontents*
     \cleardoublepage
 
@@ -53,9 +76,10 @@
 
     % Elementos pós-textuais
     \postextual
-    \include{glossario}
+    \bibliography{tcc}
+    \printglossary
+    \addcontentsline{toc}{chapter}{\uppercase{\glossarytoctitle}}
     \include{apendices}
     \include{anexos}
-    \bibliography{tcc}
 
 \end{document}

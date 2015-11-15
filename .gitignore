@@ -13,6 +13,7 @@
 ######################
 dist/
 build/
+tmp/
 
 ######################
 # Pacotes
@@ -46,19 +47,24 @@ Thumbs.db
 # Latex
 ######################
 *.aux
-*.fdb_latexmk
-*.*~
-*.ps
-*.l*
-*.idx
+*.acn
+*.acr
+*.alg
 *.bbl
-*.glo
-*.dvi
-*.toc
 *.blg
-*.ilg
-*.ind
-*.out
-*.wsp
+*.fdb_latexmk
 *.fls
-*.synctex.*
+*.glg
+*.gls
+*.glo
+*.ist
+*.lof
+*.log
+*.lot
+*.slg
+*.slo
+*.sls
+*.synctex.gz
+*.toc
+
+*.pdf

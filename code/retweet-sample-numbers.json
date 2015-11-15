@@ -1,0 +1,15 @@
+{
+    "statuses": [
+        {
+            "retweeted_status": {
+                "created_at": "Sat Jul 25 22:56:01 +0000 2015",
+                "user": {
+                    "followers_count": 77,
+                    "friends_count": 202,
+                    "listed_count": 2,
+                    "favourites_count": 153,
+                },
+            },
+        }
+    ],
+}
