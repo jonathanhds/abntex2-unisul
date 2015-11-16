@@ -1,34 +1,26 @@
+.PHONY: all clean
+
 # Definição de variáveis
 SOURCE      = tcc
-LATEX       = pdflatex
-BIBTEX      = bibtex
-MAKEINDEX   = makeindex
 GHOSTSCRIPT = gs
 
-# Compila o código fonte
+
 all:
 	@echo "Compilando arquivos..."
-	$(LATEX) $(SOURCE).tex
-	$(MAKEINDEX) $(SOURCE).idx
-	$(BIBTEX) $(SOURCE).aux
-	$(LATEX) $(SOURCE).tex
-	$(LATEX) $(SOURCE).tex
-	$(LATEX) $(SOURCE).tex
+	latexmk -r $(SOURCE).latexmk -use-make $(SOURCE).tex
 	@echo "Comprimindo o arquivo pdf..."
+	mkdir -p dist
 	@$(GHOSTSCRIPT) -q -dNOPAUSE -dBATCH -dSAFER \
 	    -sDEVICE=pdfwrite \
 	    -dEmbedAllFonts=true \
 	    -dSubsetFonts=true \
-	    -sOutputFile=$(SOURCE)_compressed.pdf \
-	    $(SOURCE).pdf
+	    -sOutputFile=dist/$(SOURCE).pdf \
+	    tmp/$(SOURCE).pdf
+	#mv tmp/$(SOURCE).pdf dist/$(SOURCE).pdf
 	@echo "Terminado."
 
-# Remove arquivos temporários
 clean:
 	@echo "Limpando arquivos temporarios..."
-	@find . -type f -iname "*.aux" -delete
-	@find . -type f -iname "*.log" -delete
-	@find . -type f -iname "*.fdb_latexmk" -delete
-	@find . -type f -iname "*.*~" -delete
-	@rm -f *.pdf *.bak *.ps *.l* *.idx *.bbl *.brf *.glo *.dvi *.toc *.blg *.ilg *.ind *.out *.wsp *.fls *.synctex*
+	latexmk -C -r $(SOURCE).latexmk
+	rm -rf dist tmp
 	@echo "Terminado."
